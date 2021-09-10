@@ -10,5 +10,6 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
         transform.position = carModel.transform.position + _offset;
+
     }
 }

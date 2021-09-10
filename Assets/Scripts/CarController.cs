@@ -3,7 +3,7 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     private readonly float _speed = 16;
-    public float turnSpeed = 5;
+    private readonly float turnSpeed = 40;
     public float turnOnRightLeft;
     public float turnOnForwardBack;
 
@@ -14,6 +14,6 @@ public class CarController : MonoBehaviour
         turnOnForwardBack = Input.GetAxis("Vertical");
 
         transform.Translate(Vector3.forward * Time.deltaTime * _speed * turnOnForwardBack);
-        transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * turnOnRightLeft);
+        transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * turnOnRightLeft);
     }
 }
