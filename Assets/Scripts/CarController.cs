@@ -4,14 +4,16 @@ public class CarController : MonoBehaviour
 {
     private readonly float _speed = 16;
     public float turnSpeed = 5;
-    public float turnOn;
+    public float turnOnRightLeft;
+    public float turnOnForwardBack;
 
 
     void Update()
     {
-        turnOn = Input.GetAxis("Horizontal");
+        turnOnRightLeft = Input.GetAxis("Horizontal");
+        turnOnForwardBack = Input.GetAxis("Vertical");
 
-        transform.Translate(Vector3.forward * Time.deltaTime * _speed);
-        transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * turnOn);
+        transform.Translate(Vector3.forward * Time.deltaTime * _speed * turnOnForwardBack);
+        transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * turnOnRightLeft);
     }
 }
