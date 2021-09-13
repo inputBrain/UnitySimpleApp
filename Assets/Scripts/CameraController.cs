@@ -1,15 +1,13 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class CameraController : MonoBehaviour
 {
     public GameObject carModel;
-    private readonly Vector3 _offset = new Vector3(0, 7.24f, -10.63f);
+    private readonly Vector3 _cameraPosition = new Vector3(0, 7.24f, -10.63f);
 
 
-    void LateUpdate()
+    private void LateUpdate()
     {
-        transform.position = carModel.transform.position + _offset;
-
+        transform.position = carModel.transform.position + _cameraPosition;
     }
 }
